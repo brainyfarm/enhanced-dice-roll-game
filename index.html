@@ -3,19 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enhanced Dice Roll Game</title>
+    <title>Premium Dice Experience</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0a0b1e">
   </head>
   <body>
-    <div class="game-container">
-      <h1>🎲 Enhanced Dice Roll Game 🎲</h1>
-      <div class="dice-wrapper">
-        <div class="dice" id="dice1"></div>
-        <div class="dice" id="dice2"></div>
-      </div>
-      <button id="rollButton">Roll the Dice</button>
-      <p id="result"></p>
+    <div class="ambient-background">
+      <div class="light-beam"></div>
+      <div class="particles"></div>
     </div>
-    <script src="script.js"></script>
+    
+    <main class="game-container">
+      <div class="premium-badge" aria-label="Premium Version">PREMIUM</div>
+      
+      <header class="game-header">
+        <h1>
+          <span class="emoji" aria-hidden="true">🎲</span>
+          Dice Master
+          <span class="premium-text">PRO</span>
+          <span class="emoji" aria-hidden="true">🎲</span>
+        </h1>
+        <p class="tagline">Experience the perfect roll</p>
+      </header>
+
+      <section class="game-stage" aria-label="Dice Rolling Area">
+        <div class="stage-lighting"></div>
+        <div class="dice-platform">
+          <div class="platform-shadow"></div>
+          <div class="dice-wrapper">
+            <div class="dice" id="dice1" role="img" aria-label="First dice">
+              <div class="face front"><div class="dots-container"></div></div>
+              <div class="face back"><div class="dots-container"></div></div>
+              <div class="face top"><div class="dots-container"></div></div>
+              <div class="face bottom"><div class="dots-container"></div></div>
+              <div class="face right"><div class="dots-container"></div></div>
+              <div class="face left"><div class="dots-container"></div></div>
+            </div>
+            <div class="dice" id="dice2" role="img" aria-label="Second dice">
+              <div class="face front"><div class="dots-container"></div></div>
+              <div class="face back"><div class="dots-container"></div></div>
+              <div class="face top"><div class="dots-container"></div></div>
+              <div class="face bottom"><div class="dots-container"></div></div>
+              <div class="face right"><div class="dots-container"></div></div>
+              <div class="face left"><div class="dots-container"></div></div>
+            </div>
+          </div>
+        </div>
+        
+        <button id="rollButton" class="premium-button" aria-label="Roll Dice">
+          <span class="button-text">ROLL DICE</span>
+          <span class="button-shine"></span>
+          <kbd class="shortcut-hint">Space</kbd>
+        </button>
+      </section>
+
+      <section class="history-section" aria-label="Roll History">
+        <div class="history-header">
+          <h2>History</h2>
+          <div class="history-stats">
+            <div class="stat" aria-live="polite">
+              <span class="stat-label">Total Rolls</span>
+              <span class="stat-value" id="totalRolls">0</span>
+            </div>
+            <div class="stat" aria-live="polite">
+              <span class="stat-label">Average</span>
+              <span class="stat-value" id="averageRoll">0.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="history-container custom-scrollbar">
+          <div id="rollHistory" class="premium-scroll" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
